@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use \App\Http\Controllers\ShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,5 @@ Route::middleware([
 
 
 
-Route::get('show',\App\Http\Controller\ShowController::class, );
+Route::get('show',[\App\Http\Controllers\ShowController::class,'show']);
+Route::get('show_data',[ShowController::class,'showData']); // dlatego mamy use na samej gorze kodu use \App\Http\Controllers\ShowController
